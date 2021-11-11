@@ -79,8 +79,7 @@ change_my_mind  =True
 
 if change_my_mind == True:
     change_my_mind=False
-    print (change_my_mind):
-    
+    print (change_my_mind)
 elif change_my_mind==False:
     change_my_mind=True
     print(change_my_mind)
