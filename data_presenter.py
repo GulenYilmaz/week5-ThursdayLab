@@ -1,20 +1,55 @@
 
-cupcake_invoices = open("CupcakeInvoices.csv")  #2 Open the CupcakeInvoices.csv.
+# Problem 2
+data = open('../CupcakeInvoices.csv')
 
-#3 Loop through all the data and print each row.
-for row in cupcake_invoices :
-    print(row)
- 
-#4 Loop through all the data and print the type of cupcakes purchased.
-    print(row[2])
-    row= row.rstrip("\n").split(",")
-    print(row[2])
+# Problem 3
+for row in data:
+  print(row)
 
-#5 Loop through all the data and print out the total for each invoice (Note: this data is not provided by the csv, you will need to calculate it. Also, keep in mind the data from the csv comes back as a string, you will need to convert it to a float. Research how to do this.).
-    total +=(Int(row[3])*float(row[4]),2)
-    print(total)
-#6  Loop through all the data, and print out the total for all invoices combined.
-    print(total,2)
-#7  Close your open file.
-cupcake_invoices.close()
+# Problem 4
+for row in data:
+  values = row.split(',')
+  print(values[2])
 
+# Problem 5
+for row in data:
+  values = row.split(',')
+  total = int(values[3]) * float(values[4])
+  print(total)
+
+# Problem 6
+total = 0
+
+for row in data:
+  values = row.split(',')
+  total = total + (int(values[3]) * float(values[4]))
+
+print(total)
+
+# Problem 7
+data.close()
+
+
+# Going Further
+
+## Note: This will need to be run in Replit.com for visualization.
+import matplotlib.pyplot as plt 
+    
+# x axis values 
+x = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"] 
+# corresponding y axis values 
+y = [10,40,32,84,60,52,18] 
+    
+# plotting the points  
+plt.plot(x, y) 
+    
+# naming the x axis 
+plt.xlabel('Day Purchased') 
+# naming the y axis 
+plt.ylabel('Cupcakes Purchased') 
+    
+# giving a title to my graph 
+plt.title('My Cupcake Sales') 
+    
+# function to show the plot 
+plt.show() 
